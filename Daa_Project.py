@@ -19,4 +19,5 @@ for w in range(len(a)):
 starting_node=65
 for i in range(len(a)):
     for j in range(len(a)):
-        print(f"From Node {chr(starting_node+i)} to Node {chr(starting_node+j)} ",a[i][j])
+        if (i!=j):
+            print(f"From Node {chr(starting_node+i)} to Node {chr(starting_node+j)} ",a[i][j])
