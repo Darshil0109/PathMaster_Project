@@ -6,7 +6,8 @@ print("[1] . Find Way from One Node to Each & Every Other Nodes. [Dijkstra's Alg
 print("[2] . Find Way from Each Nodes to Every Other Nodes. [Floyd Warshall Algo.]")
 choice=int(input("Enter Your Choice: "))
 if choice==1:
-    pass
+    obj=DK.DijkstraSolver()
+    obj.main()
 elif choice==2:
     n=int(input("Enter No. of Nodes: "))
     temp_l=[]

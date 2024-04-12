@@ -55,25 +55,38 @@ class DijkstraAlgo:
         print(*visited, sep=', ', end='')
 
 class DijkstraSolver:
-    def main(self):
-        # adjacency_list = {
-        #     'S': {'T': 10, 'Y': 5},
-        #     'T': {'Y': 2, 'X': 1},
-        #     'X': {'Z': 4},
-        #     'Y': {'T': 3, 'X': 9, 'Z': 2},
-        #     'Z': {'S': 7, 'X': 6},
-        # }
-        adjacency_list = {
-            '1': {'2': 10, '6': 30},
-            '2': {'3': 20},
-            '3': {'4': 15, '5': 5},
-            '4': {'5': 12, '7': 20, '1': 25},
-            '5': {'7': 7},
-            '6': {'7': 35},
-            '7': {},
-        }
+    def user_input(self):
+        graph = {}
 
-        g = DijkstraAlgo(adjacency_list)
-        g.dijkstra('1')
+        # Prompt for the number of nodes
+        num_nodes = int(input("Enter the number of nodes in the graph: "))
+
+        # Prompt for each node's adjacency list
+        for i in range(num_nodes):
+            node = input(f"Enter the name of node {i + 1}: ")
+            num_neighbors = int(input(f"Enter the number of neighbors for node {node}: "))
+            neighbors = {}
+            for j in range(num_neighbors):
+                neighbor = input(f"Enter neighbor {j + 1} of node {node}: ")
+                weight = float(input(f"Enter weight for edge {node}-{neighbor}: "))
+                neighbors[neighbor] = weight
+            graph[node] = neighbors
+
+        # Prompt for the starting node
+        start_node = input("Enter the starting node for Dijkstra's algorithm: ")
+
+        return graph, start_node
+
+    def main(self):
+        # Get user input for graph and starting node
+        adjacency_list, start_node = self.user_input()
+
+        # Create an instance of DijkstraAlgo with the adjacency list
+        dijkstra_algo = DijkstraAlgo(adjacency_list)
+
+        # Run Dijkstra's algorithm
+        dijkstra_algo.dijkstra(start_node)
+
+
 # obj=DijkstraSolver()
 # obj.main()
