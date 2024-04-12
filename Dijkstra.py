@@ -75,5 +75,5 @@ class DijkstraSolver:
 
         g = DijkstraAlgo(adjacency_list)
         g.dijkstra('1')
-obj=DijkstraSolver()
-obj.main()
+# obj=DijkstraSolver()
+# obj.main()

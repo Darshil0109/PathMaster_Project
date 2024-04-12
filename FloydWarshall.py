@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import itertools
 class FloydWarshallAlgo:
     def __init__(self,a):
+        self.infinity=float('inf')
         self.a=a
 # for Directed Graph 
     def FloydAlgo(self):
@@ -17,11 +18,11 @@ class FloydWarshallAlgo:
         fig, (ax1, ax2) = plt.subplots(1, 2)
         ax1.set_title('Input Graph')
         ax2.set_title('Minimum path to Explore to all Nodes')
-        for i1 in range(len(a)):
-            for j1 in range(len(a[i1])):
+        for i1 in range(len(self.a)):
+            for j1 in range(len(self.a[i1])):
                 # Infinite weight shows that there is no edge between two edges
                 # draw edges that don't have infinite value 
-                if self.a[i1][j1]!=infinity:
+                if self.a[i1][j1]!=self.infinity:
                     g.add_edge(chr(starting_node+i1),chr(starting_node+j1),weight=self.a[i1][j1])
 
         # Floyd Warshell's Algorithm
@@ -55,7 +56,7 @@ class FloydWarshallAlgo:
 
 
         path=[]
-        input_range=list(range(0,len(a)))
+        input_range=list(range(0,len(self.a)))
         # generates combination of different Ways like [1,2,3,4],[4,3,2,1],[1,3,2,4],etc....
         path_combinations=[list(perm) for perm in itertools.permutations(input_range)]
         # print(path_combinations)         #to see all ways to explore path
@@ -66,7 +67,7 @@ class FloydWarshallAlgo:
             for j in range(len(path_combinations[i])-1):
                 val1=path_combinations[i][j]
                 val2=path_combinations[i][j+1]
-                path_value+=a[val1][val2]
+                path_value+=self.a[val1][val2]
             path.append(path_value)
         # print(path)                       #to print time for each path combination
         # get index of minimum time from path list and get combination of path at that index 
@@ -77,7 +78,7 @@ class FloydWarshallAlgo:
             # suppose if min_path=[3,2,1] then val1=3 , val2=2 for first iteraation
             val1=min_path[i]
             val2=min_path[i+1]
-            g1.add_edge(chr(starting_node+val1),chr(starting_node+val2),weight=a[val1][val2])
+            g1.add_edge(chr(starting_node+val1),chr(starting_node+val2),weight=self.a[val1][val2])
         g1.in_degree('A')
         # to draww second graph
         pos1=nx.circular_layout(g1) 
@@ -87,8 +88,4 @@ class FloydWarshallAlgo:
         plt.tight_layout()
         plt.show()
 
-infinity=float('inf')
-# self.a=np.array([[0,8,5],[2,0,infinity],[infinity,1,0]])
-a=np.array([[0, 3, infinity, 7], [1, 0, 6, infinity], [infinity, 3, 0, 7], [7, infinity, 3, 0]])
-obj=FloydWarshallAlgo(a)
-obj.FloydAlgo()
+
