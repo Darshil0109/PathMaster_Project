@@ -10,7 +10,7 @@ Introducing a Python-based Design & Analysis of Algorithms(DAA) Project which is
 Install NetworkX Library using pip
 
 ```bash
-  pip install networkx[default]
+  pip install networkx
 ```
     
 Install MatPlotlib Library using pip
