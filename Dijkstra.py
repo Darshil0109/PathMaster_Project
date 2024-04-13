@@ -87,6 +87,13 @@ class DijkstraSolver:
         # Run Dijkstra's algorithm
         dijkstra_algo.dijkstra(start_node)
 
-
+ # if __name__ == "__main__":
+ #    adjacency_list = {
+ #        'S': {'U': 10, 'Y': 5},
+ #        'U': {'Y': 2, 'V': 1},
+ #        'V': {'Z': 4},
+ #        'Y': {'U': 3, 'V': 9, 'Z': 2},
+ #        'Z': {'S': 7, 'V': 6},
+ #    }
 # obj=DijkstraSolver()
 # obj.main()
