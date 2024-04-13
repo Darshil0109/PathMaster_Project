@@ -79,7 +79,6 @@ class FloydWarshallAlgo:
             val1=min_path[i]
             val2=min_path[i+1]
             g1.add_edge(chr(starting_node+val1),chr(starting_node+val2),weight=self.a[val1][val2])
-        g1.in_degree('A')
         # to draww second graph
         pos1=nx.circular_layout(g1) 
         labels1=nx.get_edge_attributes(g1,'weight')
