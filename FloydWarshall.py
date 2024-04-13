@@ -31,9 +31,7 @@ class FloydWarshallAlgo:
                 count+=1
             for i in range(len(self.a)):
                 for j in range(len(self.a)):
-                    #print(f"a[{i}][{count-1}] + a[{count-1}][{j}]",a[i][count-1] + a[count-1][j])
                     temp[i][j]=min(self.a[i][j],(self.a[i][count-1] + self.a[count-1][j]))
-                    #print(f"temp[{i}][{j}]",temp[i][j])
                 self.a=temp
             #print('Temp',temp)    #to see after each iteration change in Given input
 
@@ -59,9 +57,10 @@ class FloydWarshallAlgo:
         input_range=list(range(0,len(self.a)))
         # generates combination of different Ways like [1,2,3,4],[4,3,2,1],[1,3,2,4],etc....
         path_combinations=[list(perm) for perm in itertools.permutations(input_range)]
-        # print(path_combinations)         #to see all ways to explore path
+        print("Path Combination",path_combinations)         #to see all ways to explore path
 
         # Calculate that how much time each path would take and store it in path list
+        # [1,2,3,4]
         for i in range (len(path_combinations)):
             path_value=0
             for j in range(len(path_combinations[i])-1):
@@ -69,10 +68,12 @@ class FloydWarshallAlgo:
                 val2=path_combinations[i][j+1]
                 path_value+=self.a[val1][val2]
             path.append(path_value)
+            print("sum of weights from Path combination",path)
         # print(path)                       #to print time for each path combination
         # get index of minimum time from path list and get combination of path at that index 
         min_path=path_combinations[path.index(min(path))]
-
+        print("Minimum index of minimum weight from all paths",path.index(min(path)))
+        print("minimum Path to explore all nodes: ",min_path)
         # Draw Minimmum path in second subplot
         for i in range(len(min_path)-1):
             # suppose if min_path=[3,2,1] then val1=3 , val2=2 for first iteraation
