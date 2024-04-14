@@ -33,11 +33,6 @@ Install Numpy Library using pip
   pip install numpy
 ```
     
-## Acknowledgements
-
- - [NetworkX Tutorial](https://networkx.org/documentation/stable/tutorial.html)
-
-
 
 ## Features
 
@@ -46,6 +41,17 @@ Install Numpy Library using pip
 - Efficient Path Finder
 - Cross platform
 - Design and Analysis of Algorithm
+
+  
+## Lessons Learned
+
+- GUI Development with NetworkX
+- Shortest Path Logic
+- Analysis of Graphs
+
+## Acknowledgements
+
+ - [NetworkX Tutorial](https://networkx.org/documentation/stable/tutorial.html)
 
 
 ## Authors
@@ -57,21 +63,17 @@ Install Numpy Library using pip
 - [@prachithacker24](https://github.com/prachithacker24)
 
 
-## References
 
-- Lok Jagruti Institute of Enginneering and Technology.
 
 ## Screenshots
 
 ![image](https://github.com/Darshil0109/Daa_project/assets/122811740/038ea173-b6ac-4187-a604-2a2553a99408)
 
 
+## References
 
-## Lessons Learned
+- Lok Jagruti Institute of Enginneering and Technology.
 
-- GUI Development with NetworkX
-- Shortest Path Logic
-- Analysis of Graphs
 
 
 ## FAQ
