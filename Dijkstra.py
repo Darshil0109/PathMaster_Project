@@ -63,23 +63,39 @@ class DijkstraSolver:
 
         # Prompt for each node's adjacency list
         for i in range(num_nodes):
-            node = input(f"Enter the name of node {i + 1}: ")
+            node = input(f"\n\n\nEnter the name of node {i + 1}: ").upper()
             num_neighbors = int(input(f"Enter the number of neighbors for node {node}: "))
             neighbors = {}
             for j in range(num_neighbors):
-                neighbor = input(f"Enter neighbor {j + 1} of node {node}: ")
+                neighbor = input(f"Enter name of neighbor {j + 1} of node {node}: ").upper()
                 weight = float(input(f"Enter weight for edge {node}-{neighbor}: "))
                 neighbors[neighbor] = weight
             graph[node] = neighbors
 
         # Prompt for the starting node
-        start_node = input("Enter the starting node for Dijkstra's algorithm: ")
+        start_node = input("\n\n\nEnter the starting node/source node for Dijkstra's algorithm: ")
 
         return graph, start_node
 
     def main(self):
-        # Get user input for graph and starting node
-        adjacency_list, start_node = self.user_input()
+        print("[1]. Use Default Input ")
+        print("[2]. Enter Input by Self")
+        choice=int(input("Enter Choice: "))
+        if choice==1:
+            adjacency_list = {
+               'S': {'U': 10, 'Y': 5},
+               'U': {'Y': 2, 'V': 1},
+               'V': {'Z': 4},
+               'Y': {'U': 3, 'V': 9, 'Z': 2},
+               'Z': {'S': 7, 'V': 6},
+            }
+            start_node="U"
+        elif choice==2:
+            # For  taking Input From the user 
+            # Get user input for graph and starting node
+            adjacency_list, start_node = self.user_input()
+        
+
 
         # Create an instance of DijkstraAlgo with the adjacency list
         dijkstra_algo = DijkstraAlgo(adjacency_list)
@@ -87,13 +103,3 @@ class DijkstraSolver:
         # Run Dijkstra's algorithm
         dijkstra_algo.dijkstra(start_node)
 
- # if __name__ == "__main__":
- #    adjacency_list = {
- #        'S': {'U': 10, 'Y': 5},
- #        'U': {'Y': 2, 'V': 1},
- #        'V': {'Z': 4},
- #        'Y': {'U': 3, 'V': 9, 'Z': 2},
- #        'Z': {'S': 7, 'V': 6},
- #    }
-# obj=DijkstraSolver()
-# obj.main()

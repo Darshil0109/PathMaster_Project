@@ -17,13 +17,12 @@ elif choice==2:
                 temp_l.append(0)
             else:
                 temp_input=input(f"Enter Distance Between Node {chr(65+i)} and Node {chr(65+j)} (If there is No Way between These node write infinity): ")
-                if temp_input=="infinity":
+                if temp_input.lower()=="infinity":
                     temp_l.append(infinity)
                 else:
                     temp_l.append(int(temp_input))
     input_graph=np.array(temp_l)
     input_graph=input_graph.reshape(n,n)
-    print(input_graph)
     obj=FW.FloydWarshallAlgo(input_graph)
     obj.FloydAlgo()
 else:

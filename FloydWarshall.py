@@ -22,7 +22,7 @@ class FloydWarshallAlgo:
             for j1 in range(len(self.a[i1])):
                 # Infinite weight shows that there is no edge between two edges
                 # draw edges that don't have infinite value 
-                if self.a[i1][j1]!=self.infinity:
+                if self.a[i1][j1]!=self.infinity and i1!=j1:
                     g.add_edge(chr(starting_node+i1),chr(starting_node+j1),weight=self.a[i1][j1])
 
         # Floyd Warshell's Algorithm
@@ -57,7 +57,7 @@ class FloydWarshallAlgo:
         input_range=list(range(0,len(self.a)))
         # generates combination of different Ways like [1,2,3,4],[4,3,2,1],[1,3,2,4],etc....
         path_combinations=[list(perm) for perm in itertools.permutations(input_range)]
-        print("Path Combination",path_combinations)         #to see all ways to explore path
+        # print("Path Combination",path_combinations)         #to see all ways to explore path
 
         # Calculate that how much time each path would take and store it in path list
         # [1,2,3,4]
@@ -68,12 +68,12 @@ class FloydWarshallAlgo:
                 val2=path_combinations[i][j+1]
                 path_value+=self.a[val1][val2]
             path.append(path_value)
-            print("sum of weights from Path combination",path)
+            # print("sum of weights from Path combination",path)
         # print(path)                       #to print time for each path combination
         # get index of minimum time from path list and get combination of path at that index 
         min_path=path_combinations[path.index(min(path))]
-        print("Minimum index of minimum weight from all paths",path.index(min(path)))
-        print("minimum Path to explore all nodes: ",min_path)
+        # print("Minimum index of minimum weight from all paths",path.index(min(path)))
+        # print("minimum Path to explore all nodes: ",min_path)
         # Draw Minimmum path in second subplot
         for i in range(len(min_path)-1):
             # suppose if min_path=[3,2,1] then val1=3 , val2=2 for first iteraation
