@@ -24,4 +24,6 @@ Install Numpy Library using pip
 ```bash
   pip install numpy
 ```
-    
+
+
+![image](https://github.com/Darshil0109/Daa_project/assets/122811740/038ea173-b6ac-4187-a604-2a2553a99408)
