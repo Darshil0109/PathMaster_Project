@@ -48,23 +48,6 @@ Install Numpy Library using pip
 - Design and Analysis of Algorithm
 
 
-## FAQ
-
-#### 1. Can I visualize the results of these algorithms on a graph?
-
-Absolutely You can visualize graph in Floyd Warshall algorithm and in Dijkstra's algorithm you can check in terminal where you run the code. Also, you can see shortest distance between 2 Nodes in floyd warshall in terminal
-
-#### 2. Are there any practical applications of these algorithms?
-
-Yes, Dijkstra's and Floyd-Warshall algorithms are widely used in various applications such as network routing protocols, GPS navigation systems, airline scheduling, and optimization problems in transportation and logistics.
-
-#### 3.Why does the graph exploration process (2nd Graph) consider paths other than the shortest ones, even when multiple shortest paths exist between various pairs of nodes?
-
-During graph exploration, the algorithm's objective is to identify the shortest paths between all pairs of nodes within the graph, not just between specific nodes like A and C or B and C.
-
-#### 4. What is the time complexity of the project involving the implementation of Dijkstra's and Floyd-Warshall algorithms?
-
-Since Dijkstra's algorithm has a time complexity of O(n^2) and Floyd-Warshall algorithm has a time complexity of O(n^3), the total time complexity of the project would be O(n^3). Also there is no Extra Loop used while taking input so time complexity won't change.
 ## Authors
 
 - [@Darshil0109](https://github.com/Darshil0109)
@@ -90,3 +73,21 @@ Since Dijkstra's algorithm has a time complexity of O(n^2) and Floyd-Warshall al
 - Shortest Path Logic
 - Analysis of Graphs
 
+
+## FAQ
+
+#### 1. Can I visualize the results of these algorithms on a graph?
+
+Absolutely You can visualize graph in Floyd Warshall algorithm and in Dijkstra's algorithm you can check in terminal where you run the code. Also, you can see shortest distance between 2 Nodes in floyd warshall in terminal
+
+#### 2. Are there any practical applications of these algorithms?
+
+Yes, Dijkstra's and Floyd-Warshall algorithms are widely used in various applications such as network routing protocols, GPS navigation systems, airline scheduling, and optimization problems in transportation and logistics.
+
+#### 3.Why does the graph exploration process (2nd Graph) consider paths other than the shortest ones, even when multiple shortest paths exist between various pairs of nodes?
+
+During graph exploration, the algorithm's objective is to identify the shortest paths between all pairs of nodes within the graph, not just between specific nodes like A and C or B and C.
+
+#### 4. What is the time complexity of the project involving the implementation of Dijkstra's and Floyd-Warshall algorithms?
+
+Since Dijkstra's algorithm has a time complexity of O(n^2) and Floyd-Warshall algorithm has a time complexity of O(n^3), the total time complexity of the project would be O(n^3). Also there is no Extra Loop used while taking input so time complexity won't change.
